@@ -1,0 +1,31 @@
+.table {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table thead th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+  border: none;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background: rgba(67, 97, 238, 0.05);
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+  }
+}
