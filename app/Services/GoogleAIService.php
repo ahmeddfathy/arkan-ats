@@ -54,9 +54,15 @@ class GoogleAIService
 
     private function formatEvaluationQuestion(string $jobTitle, string $jobDescription, string $cvContent): string
     {
-        return "Please evaluate if the candidate is qualified for the following position. " .
-               "Respond with 'ACCEPTED:' followed by your explanation if they are qualified, " .
-               "or 'NOT_ACCEPTED:' followed by your explanation if they are not qualified.\n\n" .
+        return "Extract the data from the resume as follows: " .
+               "Analyze the job requirements as follows: " .
+               "Compare the resume to the job requirements as follows: " .
+               "Evaluate if the candidate is qualified for the following position. " .
+               "If the candidate does not meet a key requirement (e.g., required experience of 2 years, but the candidate has 1 year), " .
+               "respond with 'NOT_ACCEPTED:' followed by a clear explanation for the decision. " .
+               "If the candidate is accepted despite not meeting all requirements, explain the reasoning in detail and justify why the exception is acceptable. " .
+               "Respond with 'ACCEPTED:' followed by your detailed explanation if they are qualified, " .
+               "or 'NOT_ACCEPTED:' followed by your detailed explanation if they are not qualified.\n\n" .
                "Job Title: {$jobTitle}\n" .
                "Job Description: {$jobDescription}\n\n" .
                "Resume Content:\n{$cvContent}";

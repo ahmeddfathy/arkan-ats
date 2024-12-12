@@ -36,21 +36,24 @@ class Candidate extends Model
         return $this->belongsTo(User::class);
     }
 
+
     // Optionally, you can add a relationship to the Job model if required
     public function job()
     {
         return $this->belongsTo(Job::class);
     }
+    // Relationship with Applications
+    public function applications()
+    {
+        return $this->hasMany(Application::class , 'candidate_id');
+    }
 
+    // Get all jobs through applications
     public function jobs()
     {
-        return $this->hasManyThrough(
-            Job::class,       
-            Application::class,
-            'candidate_id',
-            'id',
-            'id',
-            'job_id'
-        );
+        return $this->hasManyThrough(Job::class, Application::class, 'candidate_id', 'id', 'id', 'job_id');
     }
+
+
+
 }

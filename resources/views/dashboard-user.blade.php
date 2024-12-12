@@ -19,7 +19,7 @@
                             Apply Jobs
                         </a>
                     </li>
-                
+
                 </ul>
             </div>
         </nav>
@@ -32,7 +32,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0">
                     @if(!$candidate)
                         <a href="{{ route('candidates.create') }}" class="btn btn-sm btn-primary">
-                            <i class="bi bi-person-plus"></i> Create Profile
+                            <i class="bi bi-person-plus"></i> Apply Jobs
                         </a>
                     @endif
                 </div>
@@ -42,7 +42,7 @@
             @if(!$candidate)
                 <div class="alert alert-warning" role="alert">
                     <i class="bi bi-exclamation-triangle me-2"></i>
-                    You haven't created your candidate profile yet. Create your profile to start applying for jobs!
+                    You Haven't Apply For a Job Yet. start applying for jobs!
                 </div>
             @endif
 
